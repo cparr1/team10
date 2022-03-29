@@ -6,11 +6,15 @@ using System.Web;
 
 namespace team10.DAL
 {
-    public class Team10Context : DbContextTeam10
+    public class Team10Context : DbContext
     {
         public Team10Context(): base("DefaultConnection")
         {
 
         }
+        public System.Data.Entity.DbSet<CentricUser> CentricUser { get; set; }
+        public System.Data.Entity.DbSet<CoreValue> CoreValue { get; set; }
+        public System.Data.Entity.DbSet<OfficeLocation> OfficeLocation { get; set; }
+        public System.Data.Entity.DbSet<UserTitle> UserTitle { get; set; }
     }
 }
