@@ -9,6 +9,6 @@ namespace team10.Models
     {
         public int OfficeLocationID { get; set; }
         public string locationName { get; set; }
-        public virtual CentricUser CentricUser
+        
     }
 }
