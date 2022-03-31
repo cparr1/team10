@@ -22,7 +22,7 @@ namespace team10.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your Contact Page";
 
             return View();
         }
