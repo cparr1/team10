@@ -9,6 +9,6 @@ namespace team10.Models
     {
         public int UserTitleID { get; set; }
         public string titleName { get; set; }
-        
+        public virtual CentricUser CentricUser { get; set; }
     }
 }

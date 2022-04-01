@@ -18,6 +18,7 @@ namespace team10.Controllers
         // GET: CentricUsers
         public ActionResult Index()
         {
+            var centricUser = db.CentricUser.Include(e => e.OfficeLocations).Include(e => e.UserTitles).Include(e => e.CoreValues);
             return View(db.CentricUser.ToList());
         }
 
@@ -39,6 +40,9 @@ namespace team10.Controllers
         // GET: CentricUsers/Create
         public ActionResult Create()
         {
+            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName");
+            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName");
+            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName");
             return View();
         }
 
@@ -55,7 +59,9 @@ namespace team10.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
+            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
+            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName", centricUser.CoreValueID);
             return View(centricUser);
         }
 
@@ -71,6 +77,9 @@ namespace team10.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
+            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
+            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName", centricUser.CoreValueID);
             return View(centricUser);
         }
 
@@ -87,6 +96,9 @@ namespace team10.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
+            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
+            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName", centricUser.CoreValueID);
             return View(centricUser);
         }
 
