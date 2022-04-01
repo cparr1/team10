@@ -47,7 +47,7 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "coreValueID,valueName")] CoreValue coreValue)
+        public ActionResult Create([Bind(Include = "coreValueID,valueName,valueDescription")] CoreValue coreValue)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "coreValueID,valueName")] CoreValue coreValue)
+        public ActionResult Edit([Bind(Include = "coreValueID,valueName,valueDescription")] CoreValue coreValue)
         {
             if (ModelState.IsValid)
             {
