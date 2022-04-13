@@ -10,6 +10,6 @@ namespace team10.Models
         public int coreValueID { get; set; }
         public string valueName { get; set; }
         public string valueDescription { get; set; }
-        public virtual CentricUser CentricUser { get; set; }
+        public virtual ICollection<CentricUser> CentricUser { get; set; }
     }
 }

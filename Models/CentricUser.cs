@@ -14,8 +14,8 @@ namespace team10.Models
         public int OfficeLocationID { get; set; }
         public DateTime birthday { get; set; }
         public int CoreValueID { get; set; }
-        public ICollection<OfficeLocation> OfficeLocations { get; set; }
-        public ICollection<CoreValue> CoreValues { get; set; }
-        public ICollection<UserTitle> UserTitles { get; set; }
+        public virtual OfficeLocation OfficeLocations { get; set; }
+        public virtual CoreValue CoreValues { get; set; }
+        public virtual UserTitle UserTitles { get; set; }
     }
 }
