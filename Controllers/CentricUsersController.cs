@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -55,8 +56,18 @@ namespace team10.Controllers
         {
             if (ModelState.IsValid)
             {
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(), out memberID);
+                centricUser.CentricUserID = memberID;
                 db.CentricUser.Add(centricUser);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    return View("duplicateUser")
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
