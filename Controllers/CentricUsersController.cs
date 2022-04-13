@@ -66,7 +66,7 @@ namespace team10.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return View("duplicateUser")
+                    return View("duplicateUser");
                 }
                 return RedirectToAction("Index");
             }
