@@ -14,7 +14,6 @@ namespace team10.DAL
 
         }
         public System.Data.Entity.DbSet<CentricUser> CentricUser { get; set; }
-        public System.Data.Entity.DbSet<CoreValue> CoreValue { get; set; }
         public System.Data.Entity.DbSet<OfficeLocation> OfficeLocation { get; set; }
         public System.Data.Entity.DbSet<UserTitle> UserTitle { get; set; }
         public System.Data.Entity.DbSet<Cheer> Cheer { get; set; }

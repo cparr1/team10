@@ -43,7 +43,6 @@ namespace team10.Controllers
         {
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName");
             ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName");
-            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName");
             return View();
         }
 
@@ -72,7 +71,7 @@ namespace team10.Controllers
             }
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
             ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
-            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName", centricUser.CoreValueID);
+           
             return View(centricUser);
         }
 
@@ -90,7 +89,6 @@ namespace team10.Controllers
             }
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
             ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
-            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName", centricUser.CoreValueID);
             return View(centricUser);
         }
 
@@ -109,7 +107,6 @@ namespace team10.Controllers
             }
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
             ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
-            ViewBag.CoreValueID = new SelectList(db.CoreValue, "CoreValueID", "valueName", centricUser.CoreValueID);
             return View(centricUser);
         }
 
