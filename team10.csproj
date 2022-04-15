@@ -196,6 +196,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App Icons\channels4_profile.jpg" />
+    <Content Include="App Icons\download.png" />
+    <Content Include="App Icons\ew-instagram-logo-transparent-related-keywords-logo-instagram-vector-2017-115629178687gobkrzwak.png" />
+    <Content Include="App Icons\facebook-logo-1024x1024.png" />
+    <Content Include="App Icons\linkedin-logo.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
