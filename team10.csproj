@@ -175,6 +175,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CentricUsersController.cs" />
+    <Compile Include="Controllers\CheersController.cs" />
     <Compile Include="Controllers\CoreValuesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Migrations\MIS4200Team10\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CentricUser.cs" />
+    <Compile Include="Models\Cheer.cs" />
     <Compile Include="Models\CoreValue.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -277,6 +279,11 @@
     <Content Include="Views\CoreValues\Edit.cshtml" />
     <Content Include="Views\CoreValues\Index.cshtml" />
     <Content Include="Views\CentricUsers\duplicateUser.cshtml" />
+    <Content Include="Views\Cheers\Create.cshtml" />
+    <Content Include="Views\Cheers\Delete.cshtml" />
+    <Content Include="Views\Cheers\Details.cshtml" />
+    <Content Include="Views\Cheers\Edit.cshtml" />
+    <Content Include="Views\Cheers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
