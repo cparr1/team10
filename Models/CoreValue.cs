@@ -16,5 +16,6 @@ namespace team10.Models
         [Required(ErrorMessage = "Please Enter a Short Description of Value")]
         public string valueDescription { get; set; }
         public virtual ICollection<CentricUser> CentricUser { get; set; }
+        public virtual ICollection<Cheer> Cheer { get; set; }
     }
 }

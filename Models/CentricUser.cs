@@ -40,5 +40,7 @@ namespace team10.Models
         [Display(Name = "Title")]
         [Required(ErrorMessage = "Please Select Title")]
         public virtual UserTitle UserTitles { get; set; }
+        public virtual ICollection<Cheer> Cheer { get; set; }
+
     }
 }
