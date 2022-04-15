@@ -33,10 +33,6 @@ namespace team10.Models
         [Required(ErrorMessage = "Please Select Office Location")]
         public virtual OfficeLocation OfficeLocations { get; set; }
 
-        [Display(Name = "Core Value")]
-        [Required(ErrorMessage = "Pleas Enter A Core Value")]
-        public virtual CoreValue CoreValues { get; set; }
-
         [Display(Name = "Title")]
         [Required(ErrorMessage = "Please Select Title")]
         public virtual UserTitle UserTitles { get; set; }

@@ -176,7 +176,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CentricUsersController.cs" />
     <Compile Include="Controllers\CheersController.cs" />
-    <Compile Include="Controllers\CoreValuesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OfficeLocationsController.cs" />
@@ -189,7 +188,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CentricUser.cs" />
     <Compile Include="Models\Cheer.cs" />
-    <Compile Include="Models\CoreValue.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OfficeLocation.cs" />

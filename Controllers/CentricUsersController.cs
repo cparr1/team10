@@ -19,7 +19,7 @@ namespace team10.Controllers
         // GET: CentricUsers
         public ActionResult Index()
         {
-            var centricUser = db.CentricUser.Include(e => e.OfficeLocations).Include(e => e.UserTitles).Include(e => e.CoreValues);
+            var centricUser = db.CentricUser.Include(e => e.OfficeLocations).Include(e => e.UserTitles);
             return View(db.CentricUser.ToList());
         }
 
