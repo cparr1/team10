@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<team10.Models.CentricUser>
 
 @{
+    ViewBag.Title = "Index";
 }
 
-<h2>User Profiles</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -17,16 +18,13 @@
             @Html.DisplayNameFor(model => model.lastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserTitles.titleName)
+            @Html.DisplayNameFor(model => model.UserTitleID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OfficeLocations.locationName)
+            @Html.DisplayNameFor(model => model.OfficeLocationID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.birthday)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CoreValues.valueName)
         </th>
         <th></th>
     </tr>
@@ -40,16 +38,13 @@
             @Html.DisplayFor(modelItem => item.lastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserTitles.titleName)
+            @Html.DisplayFor(modelItem => item.UserTitleID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OfficeLocations.locationName)
+            @Html.DisplayFor(modelItem => item.OfficeLocationID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.birthday)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CoreValues.valueName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CentricUserID }) |

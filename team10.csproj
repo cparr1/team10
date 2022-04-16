@@ -178,8 +178,6 @@
     <Compile Include="Controllers\CheersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\OfficeLocationsController.cs" />
-    <Compile Include="Controllers\UserTitlesController.cs" />
     <Compile Include="DAL\Team10Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -190,8 +188,6 @@
     <Compile Include="Models\Cheer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\OfficeLocation.cs" />
-    <Compile Include="Models\UserTitle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -261,21 +257,6 @@
     <Content Include="Views\CentricUsers\Details.cshtml" />
     <Content Include="Views\CentricUsers\Edit.cshtml" />
     <Content Include="Views\CentricUsers\Index.cshtml" />
-    <Content Include="Views\OfficeLocations\Create.cshtml" />
-    <Content Include="Views\OfficeLocations\Delete.cshtml" />
-    <Content Include="Views\OfficeLocations\Details.cshtml" />
-    <Content Include="Views\OfficeLocations\Edit.cshtml" />
-    <Content Include="Views\OfficeLocations\Index.cshtml" />
-    <Content Include="Views\UserTitles\Create.cshtml" />
-    <Content Include="Views\UserTitles\Delete.cshtml" />
-    <Content Include="Views\UserTitles\Details.cshtml" />
-    <Content Include="Views\UserTitles\Edit.cshtml" />
-    <Content Include="Views\UserTitles\Index.cshtml" />
-    <Content Include="Views\CoreValues\Create.cshtml" />
-    <Content Include="Views\CoreValues\Delete.cshtml" />
-    <Content Include="Views\CoreValues\Details.cshtml" />
-    <Content Include="Views\CoreValues\Edit.cshtml" />
-    <Content Include="Views\CoreValues\Index.cshtml" />
     <Content Include="Views\CentricUsers\duplicateUser.cshtml" />
     <Content Include="Views\Cheers\Create.cshtml" />
     <Content Include="Views\Cheers\Delete.cshtml" />

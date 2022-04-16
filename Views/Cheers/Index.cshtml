@@ -12,6 +12,12 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.CentricUserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheerGetter)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ShortDesc)
         </th>
         <th></th>
@@ -19,6 +25,12 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CentricUserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheerGetter)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShortDesc)
         </td>

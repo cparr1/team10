@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -19,12 +18,11 @@ namespace team10.Controllers
         // GET: CentricUsers
         public ActionResult Index()
         {
-            var centricUser = db.CentricUser.Include(e => e.OfficeLocations).Include(e => e.UserTitles);
             return View(db.CentricUser.ToList());
         }
 
         // GET: CentricUsers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
@@ -41,8 +39,6 @@ namespace team10.Controllers
         // GET: CentricUsers/Create
         public ActionResult Create()
         {
-            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName");
-            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName");
             return View();
         }
 
@@ -51,32 +47,21 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CentricUserID,firstName,lastName,UserTitleID,OfficeLocationID,birthday,CoreValueID")] CentricUser centricUser)
+        public ActionResult Create([Bind(Include = "CentricUserID,firstName,lastName,UserTitleID,OfficeLocationID,birthday")] CentricUser centricUser)
         {
             if (ModelState.IsValid)
             {
-                Guid memberID;
-                Guid.TryParse(User.Identity.GetUserId(), out memberID);
-                centricUser.CentricUserID = memberID;
+                centricUser.CentricUserID = Guid.NewGuid();
                 db.CentricUser.Add(centricUser);
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    return View("duplicateUser");
-                }
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
-            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
-           
+
             return View(centricUser);
         }
 
         // GET: CentricUsers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
@@ -87,8 +72,6 @@ namespace team10.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
-            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
             return View(centricUser);
         }
 
@@ -97,7 +80,7 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CentricUserID,firstName,lastName,UserTitleID,OfficeLocationID,birthday,CoreValueID")] CentricUser centricUser)
+        public ActionResult Edit([Bind(Include = "CentricUserID,firstName,lastName,UserTitleID,OfficeLocationID,birthday")] CentricUser centricUser)
         {
             if (ModelState.IsValid)
             {
@@ -105,13 +88,11 @@ namespace team10.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.OfficeLocationID = new SelectList(db.OfficeLocation, "OfficeLocationID", "locationName", centricUser.OfficeLocationID);
-            ViewBag.UserTitleID = new SelectList(db.UserTitle, "UserTitleID", "titleName", centricUser.UserTitleID);
             return View(centricUser);
         }
 
         // GET: CentricUsers/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
@@ -128,7 +109,7 @@ namespace team10.Controllers
         // POST: CentricUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
             CentricUser centricUser = db.CentricUser.Find(id);
             db.CentricUser.Remove(centricUser);

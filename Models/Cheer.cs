@@ -9,7 +9,7 @@ namespace team10.Models
     {
         public int CheerID { get; set; }
         public Guid CentricUserID { get; set; }
-        public virtual CentricUser CheerGetter { get; set; }
+        public Guid CheerGetter { get; set; }
         public string ShortDesc { get; set; }
         public enum CoreValue
         {
