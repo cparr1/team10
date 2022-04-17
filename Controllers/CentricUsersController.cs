@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -47,13 +48,24 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CentricUserID,firstName,lastName,UserTitleID,OfficeLocationID,birthday")] CentricUser centricUser)
+        public ActionResult Create([Bind(Include = "CentricUserID,firstName,lastName,birthday")] CentricUser centricUser)
         {
             if (ModelState.IsValid)
             {
-                centricUser.CentricUserID = Guid.NewGuid();
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(), out memberID);
+                centricUser.CentricUserID = memberID;
+                //centricUser.CentricUserID = Guid.NewGuid();
                 db.CentricUser.Add(centricUser);
                 db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    return View("duplicateUser");
+                }
                 return RedirectToAction("Index");
             }
 
@@ -80,7 +92,7 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CentricUserID,firstName,lastName,UserTitleID,OfficeLocationID,birthday")] CentricUser centricUser)
+        public ActionResult Edit([Bind(Include = "CentricUserID,firstName,lastName,birthday")] CentricUser centricUser)
         {
             if (ModelState.IsValid)
             {
