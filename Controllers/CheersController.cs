@@ -11,17 +11,20 @@ using team10.Models;
 
 namespace team10.Controllers
 {
+
     public class CheersController : Controller
     {
         private Team10Context db = new Team10Context();
 
         // GET: Cheers
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Cheer.ToList());
         }
 
         // GET: Cheers/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace team10.Controllers
         }
 
         // GET: Cheers/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +51,7 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "CheerID,CentricUserID,CheerGetter,ShortDesc")] Cheer cheer)
         {
             if (ModelState.IsValid)
@@ -60,6 +65,7 @@ namespace team10.Controllers
         }
 
         // GET: Cheers/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +84,7 @@ namespace team10.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CheerID,CentricUserID,CheerGetter,ShortDesc")] Cheer cheer)
         {
@@ -91,6 +98,7 @@ namespace team10.Controllers
         }
 
         // GET: Cheers/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +116,7 @@ namespace team10.Controllers
         // POST: Cheers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Cheer cheer = db.Cheer.Find(id);
