@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -21,5 +22,11 @@ namespace team10.Models
             Greater_Good = 6,
             Culture = 7
         }
+       public CoreValue CoreValueCheered { get; set; }
+       [ForeignKey("CentricUserID")]
+       public virtual CentricUser CheerSender { get; set; }
+       [ForeignKey("CheerGetter")]
+       public virtual CentricUser CheerReciever { get; set; }
+
     }
 }

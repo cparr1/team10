@@ -17,14 +17,12 @@ namespace team10.Controllers
         private Team10Context db = new Team10Context();
 
         // GET: CentricUsers
-        [Authorize]
         public ActionResult Index()
         {
             return View(db.CentricUser.ToList());
         }
 
         // GET: CentricUsers/Details/5
-        [Authorize]
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -40,7 +38,6 @@ namespace team10.Controllers
         }
 
         // GET: CentricUsers/Create
-        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -51,25 +48,15 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
-        public ActionResult Create([Bind(Include = "CentricUserID,firstName,lastName,birthday")] CentricUser centricUser)
+        public ActionResult Create([Bind(Include = "CentricUserID,firstName,lastName,birthday,UserTitle,UserLocation")] CentricUser centricUser)
         {
             if (ModelState.IsValid)
             {
                 Guid memberID;
                 Guid.TryParse(User.Identity.GetUserId(), out memberID);
                 centricUser.CentricUserID = memberID;
-                //centricUser.CentricUserID = Guid.NewGuid();
                 db.CentricUser.Add(centricUser);
                 db.SaveChanges();
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    return View("duplicateUser");
-                }
                 return RedirectToAction("Index");
             }
 
@@ -77,7 +64,6 @@ namespace team10.Controllers
         }
 
         // GET: CentricUsers/Edit/5
-        [Authorize]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -96,9 +82,8 @@ namespace team10.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CentricUserID,firstName,lastName,birthday")] CentricUser centricUser)
+        public ActionResult Edit([Bind(Include = "CentricUserID,firstName,lastName,birthday,UserTitle,UserLocation")] CentricUser centricUser)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +95,6 @@ namespace team10.Controllers
         }
 
         // GET: CentricUsers/Delete/5
-        [Authorize]
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -128,7 +112,6 @@ namespace team10.Controllers
         // POST: CentricUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult DeleteConfirmed(Guid id)
         {
             CentricUser centricUser = db.CentricUser.Find(id);

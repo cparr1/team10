@@ -20,6 +20,12 @@
         <th>
             @Html.DisplayNameFor(model => model.birthday)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserLocation)
+        </th>
         <th></th>
     </tr>
 
@@ -33,6 +39,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserLocation)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CentricUserID }) |

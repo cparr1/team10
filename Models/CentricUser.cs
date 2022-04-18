@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -33,7 +34,7 @@ namespace team10.Models
         [Required(ErrorMessage = "Please Select Your Birthday.")]
         public DateTime birthday { get; set; }
 
-        public enum UserTitle
+        public enum Title
         {
             Marketing = 1,
             IT = 2,
@@ -43,7 +44,8 @@ namespace team10.Models
             Managment = 6,
             Sales = 7
         }
-        public enum UserLocation
+        public Title UserTitle { get; set; }
+        public enum Location
         {
                 Chicago = 1,
                 Cleveland = 2,
@@ -53,7 +55,10 @@ namespace team10.Models
                 Dallas = 6,
                 New_York = 7
         }
-        public virtual ICollection<Cheer> Cheer { get; set; }
-
+        public Location UserLocation { get; set; }
+        [ForeignKey("CheerGetter")]
+        public virtual ICollection<Cheer> CheerReciever { get; set; }
+        [ForeignKey("CentricUserID")]
+        public virtual ICollection<Cheer> CheerSender { get; set; }
     }
 }
