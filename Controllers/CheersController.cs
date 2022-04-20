@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -39,6 +40,7 @@ namespace team10.Controllers
         // GET: Cheers/Create
         public ActionResult Create()
         {
+           
             SelectList employees = new SelectList(db.CentricUser, "CentricUserID", "fullName");
             ViewBag.CentricUserID = employees;
             return View();
