@@ -1,10 +1,10 @@
 ﻿@model team10.Models.Cheer
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit your Cheer!";
 }
 
-<h2>Edit</h2>
+<h2>Edit your Cheer!</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Cheer</h4>
+        <h4>Want to make changes to your cheer?</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.CheerID)
