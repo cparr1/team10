@@ -39,6 +39,8 @@ namespace team10.Controllers
         // GET: Cheers/Create
         public ActionResult Create()
         {
+            SelectList employees = new SelectList(db.CentricUser, "CentricUserID", "fullName");
+            ViewBag.CentricUserID = employees;
             return View();
         }
 
@@ -55,7 +57,8 @@ namespace team10.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            SelectList employees = new SelectList(db.CentricUser, "CentricUserID", "fullName");
+            ViewBag.CentricUserID = employees;
             return View(cheer);
         }
 
@@ -71,6 +74,8 @@ namespace team10.Controllers
             {
                 return HttpNotFound();
             }
+            SelectList employees = new SelectList(db.CentricUser, "CentricUserID", "fullName");
+            ViewBag.CentricUser = employees;
             return View(cheer);
         }
 
@@ -87,6 +92,8 @@ namespace team10.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            SelectList employees = new SelectList(db.CentricUser, "CentricUserID", "fullName");
+            ViewBag.CentricUser = employees;
             return View(cheer);
         }
 
