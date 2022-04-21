@@ -60,5 +60,6 @@ namespace team10.Models
         public virtual ICollection<Cheer> CheerGetter { get; set; }
         [ForeignKey("CentricUserID")]
         public virtual ICollection<Cheer> CheerSender { get; set; }
+        
     }
 }

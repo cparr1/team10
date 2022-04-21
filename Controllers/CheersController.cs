@@ -16,6 +16,8 @@ namespace team10.Controllers
     {
         private Team10Context db = new Team10Context();
 
+        public SelectList Cheer { get; private set; }
+
         // GET: Cheers
         public ActionResult Index()
         {
