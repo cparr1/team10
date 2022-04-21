@@ -26,10 +26,14 @@
         <th>
             @Html.DisplayNameFor(model => model.UserLocation)
         </th>
+        <th>
+            Cheer Count
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.firstName)
@@ -47,11 +51,27 @@
             @Html.DisplayFor(modelItem => item.UserLocation)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CentricUserID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CentricUserID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CentricUserID })
+            @{
+                Guid CentricUserID = item.CentricUserID;
+                team10.DAL.Team10Context db = new team10.DAL.Team10Context();
+                var CheerGetterCount = db.Cheer.Where(o => o.CheerGetter == CentricUserID).Count();
+
+                if (CheerGetterCount != null)
+                {
+                    <span>
+                        @CheerGetterCount
+                    </span>
+                }
+            }
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CentricUserID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CentricUserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CentricUserID })
         </td>
     </tr>
+
 }
 
 </table>
