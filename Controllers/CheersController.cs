@@ -55,6 +55,9 @@ namespace team10.Controllers
         {
             if (ModelState.IsValid)
             {
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(), out memberID);
+                cheer.CentricUserID = memberID;
                 db.Cheer.Add(cheer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
