@@ -57,7 +57,7 @@ namespace team10.Models
         }
         public Location UserLocation { get; set; }
         [ForeignKey("CheerGetter")]
-        public virtual ICollection<Cheer> CheerReciever { get; set; }
+        public virtual ICollection<Cheer> CheerGetter { get; set; }
         [ForeignKey("CentricUserID")]
         public virtual ICollection<Cheer> CheerSender { get; set; }
     }

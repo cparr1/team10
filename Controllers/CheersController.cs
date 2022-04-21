@@ -42,7 +42,7 @@ namespace team10.Controllers
         {
            
             SelectList employees = new SelectList(db.CentricUser, "CentricUserID", "fullName");
-            ViewBag.CentricUserID = employees;
+            ViewBag.CheerGetter = employees;
             return View();
         }
 
