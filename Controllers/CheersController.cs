@@ -63,8 +63,8 @@ namespace team10.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "firstName", cheer.CheerGetter);
-            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "firstName", cheer.CentricUserID);
+            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "fullName", cheer.CheerGetter);
+            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "fullName", cheer.CentricUserID);
             return View(cheer);
         }
 
@@ -80,8 +80,8 @@ namespace team10.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "firstName", cheer.CheerGetter);
-            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "firstName", cheer.CentricUserID);
+            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "fullName", cheer.CheerGetter);
+            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "fullName", cheer.CentricUserID);
             return View(cheer);
         }
 
@@ -98,8 +98,8 @@ namespace team10.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "firstName", cheer.CheerGetter);
-            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "firstName", cheer.CentricUserID);
+            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "fullName", cheer.CheerGetter);
+            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "fullName", cheer.CentricUserID);
             return View(cheer);
         }
 

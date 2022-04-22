@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CheerReciever.fullName)
+            Cheer Sender
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CheerSender.fullName)
+            Cheer Getter
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShortDesc)
@@ -29,10 +29,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CheerReciever.fullName)
+            @Html.DisplayFor(modelItem => item.CheerSender.fullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CheerSender.fullName)
+            @Html.DisplayFor(modelItem => item.CheerReciever.fullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShortDesc)
