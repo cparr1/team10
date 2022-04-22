@@ -36,24 +36,32 @@ namespace team10.Models
 
         public enum Title
         {
-            Marketing = 1,
-            IT = 2,
-            HR = 3,
-            IS = 4,
-            Finance = 5,
-            Managment = 6,
-            Sales = 7
+            Consultant = 1,
+            Senior_Consultant = 2,
+            Manager = 3,
+            Senior_Manager = 4,
+            Director = 5,
+            Vice_President= 6,
+          
         }
         public Title UserTitle { get; set; }
         public enum Location
         {
-                Chicago = 1,
-                Cleveland = 2,
-                Columbus = 3,
-                Pittsburg = 4,
-                Cinncinnati = 5,
-                Dallas = 6,
-                New_York = 7
+                Boston = 1,
+                Charlotte = 2,
+                Chicago = 3,
+                Cincinnati = 4,
+                Cleveland = 5,
+                Columbus = 6,
+                Detroit = 7,
+                India = 8,
+                Indianapolis = 9,
+                Louisville = 10,
+                Miami = 11,
+                Seattle = 12,
+                Saint_Louis = 13,
+                Tampa = 14,
+
         }
         public Location UserLocation { get; set; }
         [ForeignKey("CheerGetter")]
