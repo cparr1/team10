@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CheerSender)
+            @Html.DisplayNameFor(model => model.CheerReciever.fullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CheerGetter)
+            @Html.DisplayNameFor(model => model.CheerSender.fullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShortDesc)
@@ -26,14 +26,13 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model)
-{ 
+@foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CheerSender.fullName)
+            @Html.DisplayFor(modelItem => item.CheerReciever.fullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CheerGetter)
+            @Html.DisplayFor(modelItem => item.CheerSender.fullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShortDesc)
@@ -47,7 +46,6 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.CheerID })
         </td>
     </tr>
-    
 }
 
 </table>

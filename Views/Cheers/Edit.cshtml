@@ -1,10 +1,10 @@
 ﻿@model team10.Models.Cheer
 
 @{
-    ViewBag.Title = "Edit your Cheer!";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Edit your Cheer!</h2>
+<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
@@ -12,23 +12,23 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Want to make changes to your cheer?</h4>
+        <h4>Cheer</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.CheerID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CentricUserID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CentricUserID, "CentricUserID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CentricUserID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("CentricUserID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CentricUserID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CheerGetter, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CheerGetter, "CheerGetter", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CheerGetter, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("CheerGetter", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CheerGetter, "", new { @class = "text-danger" })
             </div>
         </div>

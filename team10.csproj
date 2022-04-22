@@ -252,16 +252,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Cheers\Create.cshtml" />
-    <Content Include="Views\Cheers\Delete.cshtml" />
-    <Content Include="Views\Cheers\Details.cshtml" />
-    <Content Include="Views\Cheers\Edit.cshtml" />
-    <Content Include="Views\Cheers\Index.cshtml" />
     <Content Include="Views\CentricUsers\Create.cshtml" />
     <Content Include="Views\CentricUsers\Delete.cshtml" />
     <Content Include="Views\CentricUsers\Details.cshtml" />
     <Content Include="Views\CentricUsers\Edit.cshtml" />
     <Content Include="Views\CentricUsers\Index.cshtml" />
+    <Content Include="Views\Cheers\Create.cshtml" />
+    <Content Include="Views\Cheers\Delete.cshtml" />
+    <Content Include="Views\Cheers\Details.cshtml" />
+    <Content Include="Views\Cheers\Edit.cshtml" />
+    <Content Include="Views\Cheers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

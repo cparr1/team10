@@ -1,29 +1,29 @@
 ﻿@model team10.Models.Cheer
 
 @{
-    ViewBag.Title = "Cheer Details";
+    ViewBag.Title = "Details";
 }
 
-<h2>Cheer Details</h2>
+<h2>Cheers!</h2>
 
 <div>
-    <h4>Look into the details of this cheer!</h4>
+    <h4>Details of this Cheer!</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CentricUserID)
+            @Html.DisplayNameFor(model => model.CheerReciever.firstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CentricUserID)
+            @Html.DisplayFor(model => model.CheerReciever.firstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CheerGetter)
+            @Html.DisplayNameFor(model => model.CheerSender.firstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CheerGetter)
+            @Html.DisplayFor(model => model.CheerSender.firstName)
         </dd>
 
         <dt>
