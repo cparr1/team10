@@ -5,10 +5,22 @@
 }
 
 <h2>Employees</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-9">
+            @using (Html.BeginForm("Index", "CentricUser", FormMethod.Get))
+            {
+                <p>
+                    Find by name: @Html.TextBox("searchString")
+                    <input type="submit" value="Search" />
+                </p>
+            }
+        </div>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    </div>
+</div>
 <table class="table">
     <tr>
         <th>

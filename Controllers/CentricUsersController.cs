@@ -17,7 +17,6 @@ namespace team10.Controllers
         private Team10Context db = new Team10Context();
 
         // GET: CentricUsers
-        [Authorize]
         public ActionResult Index()
         {
             return View(db.CentricUser.ToList());

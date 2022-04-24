@@ -41,8 +41,10 @@ namespace team10.Controllers
         // GET: Cheers/Create
         public ActionResult Create()
         {
-            ViewBag.CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "fullName");
-            ViewBag.CentricUserID = new SelectList(db.CentricUser, "CentricUserID", "fullName");
+            string empID = User.Identity.GetUserId();
+            SelectList CheerGetter = new SelectList(db.CentricUser, "CentricUserID", "fullName");
+            CheerGetter = new SelectList(CheerGetter.Where(x => x.Value != empID).ToList(), "Value", "Text");
+            ViewBag.CheerGetter = CheerGetter;
             return View();
         }
 
