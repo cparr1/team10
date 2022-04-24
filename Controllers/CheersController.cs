@@ -12,6 +12,7 @@ using team10.Models;
 
 namespace team10.Controllers
 {
+    [Authorize]
     public class CheersController : Controller
     {
         private Team10Context db = new Team10Context();
@@ -39,6 +40,7 @@ namespace team10.Controllers
         }
 
         // GET: Cheers/Create
+        [Authorize]
         public ActionResult Create()
         {
             string empID = User.Identity.GetUserId();
@@ -71,6 +73,7 @@ namespace team10.Controllers
         }
 
         // GET: Cheers/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +95,7 @@ namespace team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "CheerID,CentricUserID,CheerGetter,ShortDesc,CoreValueCheered")] Cheer cheer)
         {
             if (ModelState.IsValid)
@@ -106,6 +110,7 @@ namespace team10.Controllers
         }
 
         // GET: Cheers/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -123,6 +128,7 @@ namespace team10.Controllers
         // POST: Cheers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Cheer cheer = db.Cheer.Find(id);

@@ -12,6 +12,7 @@ using team10.Models;
 
 namespace team10.Controllers
 {
+    [Authorize]
     public class CentricUsersController : Controller
     {
         private Team10Context db = new Team10Context();
