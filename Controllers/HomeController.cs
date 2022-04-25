@@ -15,14 +15,14 @@ namespace team10.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Additonal Information";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your Contact Page";
+            ViewBag.Message = "Contact Page";
 
             return View();
         }

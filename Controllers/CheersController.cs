@@ -12,7 +12,6 @@ using team10.Models;
 
 namespace team10.Controllers
 {
-    [Authorize]
     public class CheersController : Controller
     {
         private Team10Context db = new Team10Context();

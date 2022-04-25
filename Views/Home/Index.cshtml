@@ -4,24 +4,78 @@
 
 <div class="jumbotron">
     <h1>Centric Consulting</h1>
-    <p class="lead">We have the privilege of working with Centric building a platform that empowers employees to commend their peers..</p>
+    <p class="lead">Commend Centric Peers based on the core principles of the company</p>
+    <p><a class="btn btn-default" href="https://centricconsulting.com/">Learn more about Centric &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Centric Principles</h2>
-        <p>
-            This project is being undertaken with Centric's core principles at the forefront of every decison during development.
-        </p>
-        <p><a class="btn btn-default" href="https://centricconsulting.com/">Learn more about Centric &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Incorporation of Gameification</h2>
-        <p>Final platformed should be gameified so that it's use is rewarding and incentivize return visits.</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Teamwork and Fun factor</h2>
-        <p>The project rewards teamwork and creativity, but most importantly teams should have fun!.</p>
-    </div>
-</div>
+<html>
+<title>Core Value Tabs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 
+    <div class="w3-container">
+        <h1><bold>Centric Core Values</bold></h1>
+        <p>Centric is dedicated to providing unmatched experiences by working together to do what’s right by clients while doing what’s right by all. Their seven core values reflect their professional passions, and their associate's personal convictions.</p>
+    </div>
+
+    <div class="w3-bar w3-white">
+        <button class="w3-bar-item w3-button" onclick="openValue('Commit')">Excellence</button>
+        <button class="w3-bar-item w3-button" onclick="openValue('Integ')">Integrity & Openness</button>
+        <button class="w3-bar-item w3-button" onclick="openValue('Stewardship')">Stewardship</button>
+        <button class="w3-bar-item w3-button" onclick="openValue('Culture')">Culture</button>
+        <button class="w3-bar-item w3-button" onclick="openValue('GG')">Greater Good</button>
+        <button class="w3-bar-item w3-button" onclick="openValue('Innovation')">Innovation</button>
+        <button class="w3-bar-item w3-button" onclick="openValue('Balance')">Work/Life Balance</button>
+
+
+    </div>
+
+    <div id="Commit" class="w3-container value">
+        <h3>Commitment to Excellence</h3>
+        <p>Centric has a passion for consulting excellence. In all of their projects, they strive to first understand consumer needs and then deliver on their commitments 100 percent of the time.</p>
+    </div>
+
+    <div id="Integ" class="w3-container value" style="display:none">
+        <h3>Embrace Integrity and Openness</h3>
+        <p>Centric values strong, positive relationships that are open and honest. This differentiates them and allows Centric to accomplish much more than they would be able to otherwise.</p>
+    </div>
+
+    <div id="Stewardship" class="w3-container value" style="display:none">
+        <h3>Practice Responsible Stewardship</h3>
+        <p>Centric values stewardship and fiscal accountability and always strive to do more with less. They guard and conserve company resources as if they were their own because it makes good business sense at all times, not just during lean times</p>
+    </div>
+
+    <div id="Culture" class="w3-container value" style="display:none">
+        <h3>Invest in an Exceptional Culture</h3>
+        <p>Centric aim's to hire and retain talented people from diverse backgrounds who can create a high impact for their clients and internally within their company.</p>
+    </div>
+
+    <div id="GG" class="w3-container value" style="display:none">
+        <h3>Ignite Passion for the Greater Good</h3>
+        <p>Centric take's' pride in our commitment to improving the world in which they live and actively preserving our environment for future generations. They are steadfast in their devotion to the communities they serve and actively promote employee involvement in community improvement projects.</p>
+    </div>
+
+    <div id="Innovation" class="w3-container value" style="display:none">
+        <h3>Strive to Innovate</h3>
+        <p>Centric values passion, determination, perseverance, and innovation. They are inspired because they believe in what they are doing and where they are going. Centric believe's' in using innovation to remove obstacles and help one succeed.</p>
+    </div>
+
+    <div id="Balance" class="w3-container value" style="display:none">
+        <h3>Live a Balanced Life</h3>
+        <p>Centric knows their employees are their greatest asset. Because of that, they encourage their people to strive for balance in their life, and they monitor projects to ensure their employees have time for family, community and personal interests.</p>
+    </div>
+
+    <script>
+        function openValue(valueName) {
+            var i;
+            var x = document.getElementsByClassName("value");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(valueName).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
