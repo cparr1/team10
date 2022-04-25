@@ -15,11 +15,7 @@
                     <input type="submit" value="Search" />
                 </p>
             }
-        </div>
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-    </div>
+
 </div>
 <table class="table">
     <tr>
@@ -79,8 +75,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.CentricUserID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.CentricUserID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CentricUserID })
         </td>
     </tr>
 
